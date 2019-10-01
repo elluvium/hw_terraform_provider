@@ -29,6 +29,10 @@ func Item() *schema.Resource {
 			},
 		},
 		Create: resourceCreateItem,
+		Update: resourceUpdateItem,
+		Read:   resourceReadItem,
+		Delete: resourceDeleteItem,
+		Exists: resourceExistsItem,
 		Importer: &schema.ResourceImporter{
 			State: schema.ImportStatePassthrough,
 		},
@@ -55,4 +59,28 @@ func resourceCreateItem(d *schema.ResourceData, m interface{}) error {
 	println(d.Get("name").(string))
 
 	return nil
+}
+
+func resourceUpdateItem(d *schema.ResourceData, m interface{}) error {
+	println("implement me!")
+
+	return nil
+}
+
+func resourceReadItem(d *schema.ResourceData, m interface{}) error {
+	println("implement me!")
+
+	return nil
+}
+
+func resourceDeleteItem(d *schema.ResourceData, m interface{}) error {
+	println("implement me!")
+
+	return nil
+}
+
+func resourceExistsItem(d *schema.ResourceData, m interface{}) (bool, error) {
+	println("implement me!")
+
+	return false, nil
 }
